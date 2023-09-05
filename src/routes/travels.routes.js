@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { registerTravel } from "../controllers/travels.controller"
+import { registerTravel } from "../controllers/travels.controller.js"
 
 const travelsRouter = Router()
 

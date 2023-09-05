@@ -1,7 +1,7 @@
 export async function showPassengerTravels(req, res) {
     try {
       await //função
-      res.sendStatus(200);
+      res.status(200).send("showPassenger")
     } catch (error) {
       console.log(error);
       return res.sendStatus(500);

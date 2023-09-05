@@ -1,9 +1,9 @@
 export async function registerCity(req, res) {
     try {
-      await //função
-      res.sendStatus(200);
+      //await //função
+      res.status(200).send("cities")
     } catch (error) {
-      console.log(error);
-      return res.sendStatus(500);
+      console.log(error)
+      return res.sendStatus(500)
     }
   }

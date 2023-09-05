@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { showPassengerTravels } from "../controllers/passengers.controller"
+import { showPassengerTravels } from "../controllers/passengers.controller.js"
 
 const passengersRouter = Router()
 
