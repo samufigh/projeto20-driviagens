@@ -9,5 +9,9 @@ export default function errorHandlingMiddleware(error, req, res, next) {
         return res.status(httpStatus.UNPROCESSABLE_ENTITY).send(error.message)
     }
 
+    if (error.type === "conflict"){
+        return res.status(httpStatus.CONFLICT).send(error.message)
+    }
+
 	return res.sendStatus(500);
 }
