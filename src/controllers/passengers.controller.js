@@ -1,14 +1,12 @@
 import httpStatus from "http-status";
 import { passengerService } from "../services/passengerService.js";
+import { incompleteDataError } from "../errors/incompleteData.js";
 
 export async function registerPassenger(req, res) {
-  try {
+
+    if (!req.body) throw incompleteDataError()
     await passengerService.createPassenger(req.body)
     res.sendStatus(httpStatus.CREATED)
-  } catch (error) {
-    console.log(error);
-    return res.sendStatus(500);
-  }
 }
 
 export async function showPassengerTravels(req, res) {
