@@ -9,7 +9,8 @@ async function findCity(name) {
 
 async function createCity(name){
     return db.query(`
-        INSERT INTO cities (name) 
+        INSERT INTO cities 
+        (name) 
         VALUES ($1);`,
         [name])
 }
