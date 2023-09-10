@@ -1,4 +1,4 @@
-import { db } from "../database/database.connection.js";
+import { db } from "../database/database.connection.js"
 
 async function findCities(origin, destination) {
     return db.query(`

@@ -1,4 +1,4 @@
-import httpStatus from "http-status";
+import httpStatus from "http-status"
 
 export default function errorHandlingMiddleware(error, req, res, next) {
 	if (error.type === "notFound"){
@@ -25,5 +25,13 @@ export default function errorHandlingMiddleware(error, req, res, next) {
         return res.status(httpStatus.UNPROCESSABLE_ENTITY).send(error.message)
     }
 
-	return res.sendStatus(500);
+    if (error.type === "notFoundPassenger"){
+        return res.status(httpStatus.NOT_FOUND).send(error.message)
+    }
+
+    if (error.type === "notFoundFlight"){
+        return res.status(httpStatus.NOT_FOUND).send(error.message)
+    }
+
+	return res.sendStatus(500)
 }
