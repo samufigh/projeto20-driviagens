@@ -10,8 +10,11 @@ async function selectPassengerTravels(name){
         const travels = await passengerRepository.selectPassengerTravels()
         console.log(travels.rows)
         return travels.rows
+    } else {
+        const travels = await passengerRepository.selectPassengerTravelsbyName(name)
+        console.log(travels.rows)
+        return travels.rows
     }
-    return //passengerRepository.createPassenger( body )
 }
 
 export const passengerService  = { createPassenger, selectPassengerTravels }
