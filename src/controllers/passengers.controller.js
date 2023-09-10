@@ -4,9 +4,9 @@ import { incompleteDataError } from "../errors/incompleteData.js"
 
 export async function registerPassenger(req, res) {
 
-    if (!req.body) throw incompleteDataError()
-    await passengerService.createPassenger(req.body)
-    res.sendStatus(httpStatus.CREATED)
+  if (!req.body) throw incompleteDataError()
+  await passengerService.createPassenger(req.body)
+  res.sendStatus(httpStatus.CREATED)
 }
 
 export async function showPassengerTravels(req, res) {
