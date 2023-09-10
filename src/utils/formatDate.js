@@ -7,7 +7,6 @@ export function convertDate(date) {
   }
 
 export function formatDate(date) {
-  console.log(date)
-  const formattedDate = date.substring(0, 10); 
-  return formattedDate;
+  const pattern = /^\d{2}-\d{2}-\d{4}$/;
+  return pattern.test(date);
 }
