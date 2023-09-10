@@ -11,3 +11,10 @@ export function invalidFormatDateError(date){
         message: "As datas devem estar no formato DD-MM-AAAA."
     }
 }
+
+export function inconsistentDatesError(){
+    return{
+        type: "inconsistentDates",
+        message: `A bigger-date deve ser maior ou igual à smaller-date.`
+    }
+}
