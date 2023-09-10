@@ -12,8 +12,8 @@ async function createPassenger(body) {
 
 }
 
-async function selectPassengerTravels(){
-    
+async function selectPassengerTravels() {
+
     return db.query(`
         SELECT
             p."firstName" || ' ' || p."lastName" AS passenger,
@@ -33,8 +33,8 @@ async function selectPassengerTravels(){
     `)
 }
 
-async function selectPassengerTravelsbyName(name){
-    
+async function selectPassengerTravelsbyName(name) {
+
     return db.query(`
         SELECT
             p."firstName" || ' ' || p."lastName" AS passenger,
