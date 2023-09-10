@@ -12,4 +12,25 @@ async function createPassenger(body) {
 
 }
 
-export const passengerRepository = { createPassenger }
+async function selectPassengerTravels(){
+    
+    return db.query(`
+        SELECT
+            p."firstName" || ' ' || p."lastName" AS passenger,
+            CAST(COUNT(t."passengerId") AS INTEGER) AS travels
+        FROM
+            passengers p
+        LEFT JOIN
+            travels t
+        ON
+            p.id = t."passengerId"
+        GROUP BY
+            passenger
+        ORDER BY
+            travels DESC
+        LIMIT
+            10;
+    `)
+}
+
+export const passengerRepository = { createPassenger, selectPassengerTravels }

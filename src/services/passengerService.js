@@ -4,8 +4,13 @@ function createPassenger(body){
     return passengerRepository.createPassenger( body )
 }
 
-function selectPassengerTravels(name){
-    
+async function selectPassengerTravels(name){
+
+    if (!name){
+        const travels = await passengerRepository.selectPassengerTravels()
+        console.log(travels.rows)
+        return travels.rows
+    }
     return //passengerRepository.createPassenger( body )
 }
 

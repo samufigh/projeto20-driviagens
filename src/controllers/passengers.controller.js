@@ -13,7 +13,7 @@ export async function showPassengerTravels(req, res) {
   const { name } = req.query;
 
   if (!req.body) throw incompleteDataError()
-  await passengerService.selectPassengerTravels(name)
-  res.status(200).send("showPassenger")
+  const travels = await passengerService.selectPassengerTravels(name)
+  res.status(200).send(travels)
     
 }
