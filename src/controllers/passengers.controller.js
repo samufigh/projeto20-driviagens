@@ -10,11 +10,10 @@ export async function registerPassenger(req, res) {
 }
 
 export async function showPassengerTravels(req, res) {
-    try {
-      await //função
-      res.status(200).send("showPassenger")
-    } catch (error) {
-      console.log(error);
-      return res.sendStatus(500);
-    }
+  const { name } = req.query;
+
+  if (!req.body) throw incompleteDataError()
+  const travels = await passengerService.selectPassengerTravels(name)
+  res.status(200).send(travels)
+    
 }

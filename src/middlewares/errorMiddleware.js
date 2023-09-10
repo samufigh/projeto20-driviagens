@@ -32,14 +32,20 @@ export default function errorHandlingMiddleware(error, req, res, next) {
     if (error.type === "notFoundFlight"){
         return res.status(httpStatus.NOT_FOUND).send(error.message)
     }
+
     if (error.type === "unprocessableEntityDate"){
         return res.status(httpStatus.UNPROCESSABLE_ENTITY).send(error.message)
     }
+
     if (error.type === "invalidFormatDate"){
         return res.status(httpStatus.UNPROCESSABLE_ENTITY).send(error.message)
     }
+
     if (error.type === "inconsistentDates"){
         return res.status(httpStatus.BAD_REQUEST).send(error.message)
+    }
+    if (error.type === "manyResults"){
+        return res.status(httpStatus.INTERNAL_SERVER_ERROR).send(error.message)
     }
 
 	return res.sendStatus(500)

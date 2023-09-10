@@ -56,6 +56,11 @@ async function selectFlights(origin, destination, biggerDate, smallerDate){
         const flights = await flightRepository.selectFlightsByOriginDestinationAndDate(origin, destination, smallerDate, biggerDate)
         return flights.rows
     }
+
+    if (!origin && !destination && !biggerDate && !smallerDate){
+        const flights = await flightRepository.selectFlights()
+        return flights.rows
+    }
 }
 
 export const flightService  = { createFlight, selectFlights }
