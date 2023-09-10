@@ -1,7 +1,7 @@
 export function convertDate(date) {
-    var partes = date.split('-')
+    const parts = date.split('-')
     if (partes.length === 3) {
-      return partes[2] + '-' + partes[1] + '-' + partes[0]
+      return parts[2] + '-' + parts[1] + '-' + parts[0]
     }
     return null
   }
@@ -12,8 +12,8 @@ export function formatDate(date) {
 }
 
 export function desconvertDate(date) {
-  const partes = date.split('-')
-    const [dia, mes, ano] = partes
-    const dataNoNovoFormato = `${ano}-${mes}-${dia}`
-    return dataNoNovoFormato
+  const parts = date.split('-')
+    const [day, month, year] = parts
+    const newDate = `${year}-${month}-${day}`
+    return newDate
 }

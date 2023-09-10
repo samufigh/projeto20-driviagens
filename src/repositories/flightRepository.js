@@ -69,6 +69,18 @@ async function selectFlightsByOrigin(origin) {
         AND flights."date" BETWEEN $3 AND $4;
       `, [origin, destination, smallerDate, biggerDate]);
   }
+
+  async function selectFlights() {
+    return db.query(`
+      SELECT flights."id" AS "id", 
+          origin_cities."name" AS "origin", 
+          destination_cities."name" AS "destination", 
+          flights."date", TO_CHAR(flights."date", 'DD-MM-YYYY') AS "formatted_date" 
+      FROM flights
+      JOIN cities AS origin_cities ON origin_cities.id = flights.origin
+      JOIN cities AS destination_cities ON destination_cities.id = flights.destination;
+      `,);
+  }
   
 
-export const flightRepository = { findCities, createFlight, selectFlightsByOrigin, selectFlightsByDestinaion, selectFlightsByDate, selectFlightsByOriginDestinationAndDate }
+export const flightRepository = { findCities, createFlight, selectFlights, selectFlightsByOrigin, selectFlightsByDestinaion, selectFlightsByDate, selectFlightsByOriginDestinationAndDate }
