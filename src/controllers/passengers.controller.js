@@ -1,6 +1,6 @@
-import httpStatus from "http-status";
-import { passengerService } from "../services/passengerService.js";
-import { incompleteDataError } from "../errors/incompleteData.js";
+import httpStatus from "http-status"
+import { passengerService } from "../services/passengerService.js"
+import { incompleteDataError } from "../errors/incompleteData.js"
 
 export async function registerPassenger(req, res) {
 

@@ -1,5 +1,5 @@
-import httpStatus from "http-status";
-import { cityService } from "../services/cityService.js";
+import httpStatus from "http-status"
+import { cityService } from "../services/cityService.js"
 
 export async function registerCity(req, res) {
   if (!req.body) throw incompleteDataError()

@@ -1,7 +1,7 @@
-import { db } from "../database/database.connection.js";
+import { db } from "../database/database.connection.js"
 
 async function createPassenger(body) {
-    const { firstName, lastName } = body;
+    const { firstName, lastName } = body
 
     return db.query(`
         INSERT INTO passengers 

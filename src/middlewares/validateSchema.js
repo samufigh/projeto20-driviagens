@@ -1,4 +1,4 @@
-import { invalidSchema } from "../errors/invalidSchema.js";
+import { invalidSchema } from "../errors/invalidSchema.js"
 
 export function validateSchema(schema) {
     return (req, res, next) => {
@@ -8,6 +8,6 @@ export function validateSchema(schema) {
             const errors = validation.error.details.map(detail => detail.message)
             throw invalidSchema(errors)
         }
-        next();
+        next()
     }
 }
