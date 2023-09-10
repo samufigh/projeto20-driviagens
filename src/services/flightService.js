@@ -26,6 +26,9 @@ async function selectFlights(origin, destination, biggerDate, smallerDate){
     if (origin && !destination && !biggerDate && !smallerDate){
         const flights = await flightRepository.selectFlightsByOrigin(origin)
         return flights.rows
+    } else if (!origin && destination && !biggerDate && !smallerDate){
+        const flights = await flightRepository.selectFlightsByDestinaion(destination)
+        return flights.rows
     }
 }
 
