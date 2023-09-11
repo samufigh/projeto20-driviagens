@@ -21,7 +21,7 @@ async function selectFlightsByOrigin(origin) {
         SELECT flights."id" AS "id", 
             origin_cities."name" AS "origin", 
             destination_cities."name" AS "destination", 
-            flights."date", TO_CHAR(flights."date", 'DD-MM-YYYY') AS "date" 
+            TO_CHAR(flights."date", 'DD-MM-YYYY') AS "date" 
         FROM flights
         JOIN cities AS origin_cities ON origin_cities.id = flights.origin
         JOIN cities AS destination_cities ON destination_cities.id = flights.destination
@@ -34,7 +34,7 @@ async function selectFlightsByOrigin(origin) {
         SELECT flights."id" AS "id", 
             origin_cities."name" AS "origin", 
             destination_cities."name" AS "destination", 
-            flights."date", TO_CHAR(flights."date", 'DD-MM-YYYY') AS "date" 
+            TO_CHAR(flights."date", 'DD-MM-YYYY') AS "date" 
         FROM flights
         JOIN cities AS origin_cities ON origin_cities.id = flights.origin
         JOIN cities AS destination_cities ON destination_cities.id = flights.destination
@@ -47,7 +47,7 @@ async function selectFlightsByOrigin(origin) {
       SELECT flights."id" AS "id", 
           origin_cities."name" AS "origin", 
           destination_cities."name" AS "destination", 
-          flights."date", TO_CHAR(flights."date", 'DD-MM-YYYY') AS "formatted_date" 
+          TO_CHAR(flights."date", 'DD-MM-YYYY') AS "date" 
       FROM flights
       JOIN cities AS origin_cities ON origin_cities.id = flights.origin
       JOIN cities AS destination_cities ON destination_cities.id = flights.destination
@@ -60,7 +60,7 @@ async function selectFlightsByOrigin(origin) {
       SELECT flights."id" AS "id", 
           origin_cities."name" AS "origin", 
           destination_cities."name" AS "destination", 
-          flights."date", TO_CHAR(flights."date", 'DD-MM-YYYY') AS "formatted_date" 
+          TO_CHAR(flights."date", 'DD-MM-YYYY') AS "date" 
       FROM flights
       JOIN cities AS origin_cities ON origin_cities.id = flights.origin
       JOIN cities AS destination_cities ON destination_cities.id = flights.destination
@@ -75,7 +75,7 @@ async function selectFlightsByOrigin(origin) {
       SELECT flights."id" AS "id", 
           origin_cities."name" AS "origin", 
           destination_cities."name" AS "destination", 
-          flights."date", TO_CHAR(flights."date", 'DD-MM-YYYY') AS "formatted_date" 
+          TO_CHAR(flights."date", 'DD-MM-YYYY') AS "date" 
       FROM flights
       JOIN cities AS origin_cities ON origin_cities.id = flights.origin
       JOIN cities AS destination_cities ON destination_cities.id = flights.destination;

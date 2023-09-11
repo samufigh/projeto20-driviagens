@@ -7,9 +7,10 @@ import { convertDate, desconvertDate, formatDate } from "../utils/formatDate.js"
 import { incompleteDatesError } from "../errors/incompleteData.js"
 
 async function createFlight({origin, destination, date}){
-    const todayDate = dayjs().format('DD-MM-YYYY')
-    const currentDate = convertDate(todayDate)
-    const requestedDate = convertDate(date)
+    
+    const todayDate = dayjs().format('DD-MM-YYYY');
+    const currentDate = convertDate(todayDate);
+    const requestedDate = convertDate(date);
 
     if (requestedDate <= currentDate) throw invalidDateError(todayDate)    
 
