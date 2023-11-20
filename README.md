@@ -3,7 +3,7 @@
 Aplicação de back-end para o desafio técnico da vaga de back-end node júnior. Neste projeto, você poderá gerenciar o back-end de uma aplicação relacionada a viagens, implementando funcionalidades essenciais através de requisições HTTP(s) seguindo a convenção REST.
 
 # Demo
-[Link do projeto]()
+https://github.com/samufigh/projeto20-driviagens
 
 # Como funciona?
 Este projeto é uma API REST desenvolvida para atender a aplicação de viagens da Driviagens. A principal entidade do sistema é passenger, e outras entidades como cities, flights, e travels também estão presentes. As características dessas entidades estão definidas no arquivo de modelagem do banco de dados.
@@ -71,9 +71,7 @@ Para este projeto, foram utilizadas:
 
 - Node (versão 18.17.0);
 - Express;
-- TypeScript;
 - Postgres;
-- MongoDb;
 - Joi;
 
 # Como rodar em desenvolvimento
